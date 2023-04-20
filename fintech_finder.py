@@ -29,7 +29,13 @@ import streamlit as st
 from dataclasses import dataclass
 from typing import Any, List
 from web3 import Web3
-w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
+ganache_url = "http://127.0.0.1:7545"
+w3 = Web3(Web3.HTTPProvider(ganache_url))
+
+# Check if connected to Ethereum provider
+if not w3.isConnected():
+    raise Exception("Not connected to Ethereum provider")
+#w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 ################################################################################
 # Step 1:
 # Import Ethereum Transaction Functions into the Fintech Finder Application
@@ -153,6 +159,8 @@ def get_balance(address):
 
 # Replace the following line with the appropriate code to get the account address
 account_address = "xA9566212F303A3f16623Ae40efCb0b92D58836b6"  # Replace this with a valid address from your Ganache setup or from user input
+if not w3.isAddress(account_address):
+    raise Exception("Invalid Ethereum address")
 
 balance = get_balance(account_address)
 st.sidebar.write(balance)
