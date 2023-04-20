@@ -22,6 +22,9 @@ def generate_account():
     # Fetch mnemonic from environment variable.
     mnemonic = os.getenv("MNEMONIC")
 
+    if not mnemonic or not isinstance(mnemonic, str):
+        raise ValueError("Mnemonic not found or not a string value. Please set the 'MNEMONIC' environment variable.")
+
     # Create Wallet Object
     wallet = Wallet(mnemonic)
 
@@ -32,6 +35,7 @@ def generate_account():
     account = Account.privateKeyToAccount(private)
 
     return account
+
 
 def get_balance(w3, address):
     """Using an Ethereum account address access the balance of Ether"""
