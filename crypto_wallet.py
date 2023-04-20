@@ -12,27 +12,24 @@ load_dotenv()
 from bip44 import Wallet
 from web3 import Account
 from web3 import middleware
-from mnemonic import Mnemonic
-from web3 import Web3
 from web3.gas_strategies.time_based import medium_gas_price_strategy
 
 ################################################################################
 # Wallet functionality
-def generate_account():
-    # Generate a new mnemonic using the bip39 library
-    mnemonic_instance = Mnemonic("english")
-    mnemonic = mnemonic_instance.generate()
-    print(f"Generated mnemonic: {mnemonic}")
 
-    # Create a Wallet instance using the generated mnemonic
+def generate_account():
+    """Create a digital wallet and Ethereum account from a mnemonic seed phrase."""
+    # Fetch mnemonic from environment variable.
+    mnemonic = os.getenv("MNEMONIC")
+
+    # Create Wallet Object
     wallet = Wallet(mnemonic)
 
     # Derive Ethereum Private Key
     private, public = wallet.derive_account("eth")
 
     # Convert private key into an Ethereum account
-    account = Account.from_key(private)
-
+    account = Account.privateKeyToAccount(private)
 
     return account
 
