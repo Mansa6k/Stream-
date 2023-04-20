@@ -31,8 +31,6 @@ from typing import Any, List
 from web3 import Web3
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 # Check if connected to Ethereum node
-if not w3.isConnected():
-    st.error("Unable to connect to Ethereum node. Please check your Ganache Ethereum node URL and make sure it's running.")
 
 ################################################################################
 # Step 1:
