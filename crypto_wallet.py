@@ -40,16 +40,16 @@ def generate_account():
 
 
 
+from requests.exceptions import ConnectionError
+
 def get_balance(w3, address):
-    """Using an Ethereum account address access the balance of Ether"""
-    # Get balance of address in Wei
-    wei_balance = w3.eth.get_balance(address)
-
-    # Convert Wei value to ether
-    ether = w3.fromWei(wei_balance, "ether")
-
-    # Return the value in ether
-    return ether
+    try:
+        wei_balance = w3.eth.get_balance(address)
+        eth_balance = w3.fromWei(wei_balance, "ether")
+        return f"Balance: {eth_balance} Ether"
+    except ConnectionError:
+        st.error("Unable to connect to the Ethereum node. Please check your connection and try again.")
+        return "Error: Unable to retrieve balance"
 
 
 def send_transaction(w3, account, to, wage):
