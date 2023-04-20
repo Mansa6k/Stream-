@@ -146,7 +146,11 @@ st.sidebar.write(account.address)
 # @TODO
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
-balance = get_balance(account.address)
+#balance = get_balance(account.address)
+def get_balance(address):
+    balance = w3.eth.getBalance(address)
+    return w3.fromWei(balance, 'ether')
+
 st.sidebar.write(balance)
 
 ##########################################
