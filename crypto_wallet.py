@@ -22,6 +22,8 @@ def generate_account():
     # Fetch mnemonic from environment variable.
     mnemonic = os.getenv("MNEMONIC")
 
+    print(f"mnemonic: {mnemonic}")  # Add this line to print the value of the mnemonic variable.
+
     if not mnemonic or not isinstance(mnemonic, str):
         raise ValueError("Mnemonic not found or not a string value. Please set the 'MNEMONIC' environment variable.")
 
@@ -35,6 +37,7 @@ def generate_account():
     account = Account.privateKeyToAccount(private)
 
     return account
+
 
 
 def get_balance(w3, address):
