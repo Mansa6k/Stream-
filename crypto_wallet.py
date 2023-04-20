@@ -16,13 +16,13 @@ from web3.gas_strategies.time_based import medium_gas_price_strategy
 
 ################################################################################
 # Wallet functionality
-
 def generate_account():
-    """Create a digital wallet and Ethereum account from a mnemonic seed phrase."""
-    # Fetch mnemonic from environment variable.
-    mnemonic = os.getenv("MNEMONIC")
+    # Generate a new mnemonic using the bip39 library
+    mnemonic_instance = Mnemonic("english")
+    mnemonic = mnemonic_instance.generate()
+    print(f"Generated mnemonic: {mnemonic}")
 
-    # Create Wallet Object
+    # Create a Wallet instance using the generated mnemonic
     wallet = Wallet(mnemonic)
 
     # Derive Ethereum Private Key
