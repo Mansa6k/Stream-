@@ -29,10 +29,7 @@ import streamlit as st
 from dataclasses import dataclass
 from typing import Any, List
 from web3 import Web3
-ganache_url = "http://127.0.0.1:7545"
-w3 = Web3(Web3.HTTPProvider(ganache_url))
-
-#w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
+w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 ################################################################################
 # Step 1:
 # Import Ethereum Transaction Functions into the Fintech Finder Application
@@ -149,17 +146,7 @@ st.sidebar.write(account.address)
 # @TODO
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
-#balance = get_balance(account.address)
-def get_balance(address):
-    balance = w3.eth.getBalance(address)
-    return w3.fromWei(balance, 'ether')
-
-# Replace the following line with the appropriate code to get the account address
-account_address = "xA9566212F303A3f16623Ae40efCb0b92D58836b6"  # Replace this with a valid address from your Ganache setup or from user input
-
-balance = get_balance(account_address)
-st.sidebar.write(balance)
-
+st.sidebar.write(get_balance(account.address))
 
 ##########################################
 
