@@ -159,8 +159,6 @@ def get_balance(address):
 
 # Replace the following line with the appropriate code to get the account address
 account_address = "xA9566212F303A3f16623Ae40efCb0b92D58836b6"  # Replace this with a valid address from your Ganache setup or from user input
-if not w3.isAddress(account_address):
-    raise Exception("Invalid Ethereum address")
 
 balance = get_balance(account_address)
 st.sidebar.write(balance)
