@@ -38,6 +38,7 @@ pip install mnemonic
 3. Add your Ethereum mnemonic seed phrase to the .env.example file and rename it to .env.
 
 4. Start the Streamlit application.
+
 streamlit run fintech_finder.py
 
 5. Open the Streamlit application in your browser using the link provided in the terminal.
