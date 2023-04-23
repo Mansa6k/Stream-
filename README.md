@@ -19,7 +19,22 @@ https://github.com/Mansa6k/Stream-.git
 
 2. Create a Python virtual environment and install dependencies.
 
-python -m venv venv source venv/bin/activate pip install -r requirements.txt
+python -m venv venv source venv/bin/activate 
+
+pip install web3
+
+pip install ipfshttpclient
+
+pip install multiaddr
+
+pip install varint
+
+pip install python-dotenv
+
+pip install bip44
+
+pip install mnemonic
+
 3. Add your Ethereum mnemonic seed phrase to the .env.example file and rename it to .env.
 
 4. Start the Streamlit application.
