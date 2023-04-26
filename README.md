@@ -35,7 +35,7 @@ pip install bip44
 
 pip install mnemonic
 
-3. Add your Ethereum mnemonic seed phrase to the .env.example file and rename it to .env.
+3. Add your Ethereum mnemonic seed phrase to the Spice.env file and rename it if you so desire.
 
 4. Start the Streamlit application.
 
