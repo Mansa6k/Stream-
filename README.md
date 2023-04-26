@@ -13,9 +13,9 @@ Fintech Finder is a Streamlit-based web application that helps customers find, h
 
 # Installation and Setup
 
-1. Clone this repository to your local machine.
+1. Clone this repository to your local machine:
 
-https://github.com/Mansa6k/Stream-.git
+   https://github.com/Mansa6k/Stream-.git
 
 2. Create a Python virtual environment and install dependencies.
 
