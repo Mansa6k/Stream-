@@ -3,7 +3,7 @@
 # Overview
 
 Fintech Finder is a Streamlit-based web application that helps customers find, hire, and pay fintech professionals using Ethereum. The application allows users to view a list of fintech professionals, their ratings, and hourly rates. Users can select a professional, input the number of hours they'd like to hire them for, and send a payment transaction through the Ethereum blockchain.
-￼
+
 # Features
 * Generate a new Ethereum account instance using a mnemonic seed phrase
 * Display the Ethereum account balance associated with a user's Ethereum account address
